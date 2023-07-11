@@ -4,7 +4,7 @@ import Card from "./Components/Card/Card";
 
 function App() {
   const [data, setData] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
+  // const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     fetchCharacters();
