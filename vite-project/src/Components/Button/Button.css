@@ -1,0 +1,13 @@
+.myButton {
+
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 18px 16px;
+  transition: all 0.3s ease; 
+  &:hover {
+    background-color: #383838;
+    color: #ffffff;
+  }
+
+}
