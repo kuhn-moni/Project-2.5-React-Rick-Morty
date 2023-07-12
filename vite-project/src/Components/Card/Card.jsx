@@ -9,7 +9,7 @@ function Card({ character }) {
       <h1>{name}</h1>
       <h1>{species}</h1>
       <h2>{status}</h2>
-      <h2>{image}</h2>
+      <img src={image} alt={name} />
 
       <Button buttonLabel={"show me more"} id={id} />
     </div>

@@ -1,33 +1,39 @@
 import { useEffect, useState } from "react";
 import Card from "./Components/Card/Card";
+import Pagination from "./Components/Pagination/Pagination";
+import Search from "./Components/Search/Search";
 // import "../App.css";
 
 function App() {
   const [data, setData] = useState([]);
-  // const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetchCharacters();
-  }, []); // Empty array makes this run only on component mount
+    console.log("our page number changed", currentPage);
+    fetchCharacters(currentPage, search);
+  }, [currentPage, search]);
 
-  const fetchCharacters = async () => {
+  const fetchCharacters = async (pageNumber, search) => {
     try {
-      let result = await fetch("https://rickandmortyapi.com/api/character");
+      let result = await fetch(
+        `https://rickandmortyapi.com/api/character/?name=${search}&page=${pageNumber}`
+      );
       let json = await result.json();
       console.log("json.results.length :>> ", json.results.length);
+      console.log(json);
       setData(json.results);
     } catch (error) {
       console.log("need better error handling", error.message);
     }
   };
 
-  console.log("first render undefined", data);
   return (
     <>
+      <Search setSearch={setSearch} setCurrentPage={setCurrentPage} />
       {data.length > 0 &&
         data.map((character, i) => <Card key={i} character={character} />)}
-      <button>prev</button>
-      <button>next</button>
+      <Pagination setCurrentPage={setCurrentPage} currentPage={currentPage} />
     </>
   );
 }
