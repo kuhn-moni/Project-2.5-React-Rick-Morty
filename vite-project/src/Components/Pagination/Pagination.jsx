@@ -1,8 +1,8 @@
-import React from "react";
+import { useState } from "react";
 
 const Pagination = (props) => {
   console.log("props", props);
-  const { currentPage, setCurrentPage } = props;
+  const { currentPage, setCurrentPage } = useState(1);
 
   console.log("in pag", currentPage, setCurrentPage);
 

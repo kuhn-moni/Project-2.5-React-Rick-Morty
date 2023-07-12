@@ -31,8 +31,10 @@ function App() {
   return (
     <>
       <Search setSearch={setSearch} setCurrentPage={setCurrentPage} />
+
       {data.length > 0 &&
         data.map((character, i) => <Card key={i} character={character} />)}
+
       <Pagination setCurrentPage={setCurrentPage} currentPage={currentPage} />
     </>
   );

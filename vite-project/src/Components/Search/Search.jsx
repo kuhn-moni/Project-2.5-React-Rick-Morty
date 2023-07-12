@@ -1,13 +1,11 @@
-import React from "react";
-
-const Search = ({ setSearch, setCurrentPage }) => {
+const Search = (setSearch, setCurrentPage) => {
   return (
     <form className="">
       <input
         onChange={(e) => {
           console.log("e length", e.target.value.length);
           setSearch(e.target.value);
-          setCurrentPage(1);
+          setCurrentPage();
         }}
         placeholder="Search for Characters"
         type="text"
