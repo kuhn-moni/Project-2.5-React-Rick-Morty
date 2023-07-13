@@ -6,9 +6,9 @@ function Card({ character }) {
   const { name, gender, status, species, id, image } = character; //! destructuring
   return (
     <div className="my-card" key={id}>
-      <h1>{name}</h1>
-      <h2>{species}</h2>
-      <h2>{status}</h2>
+      <h2>{name}</h2>
+      <h3>{species}</h3>
+      <h3>{status}</h3>
       <img src={image} alt={name} />
 
       <Button buttonLabel={"show me more"} id={id} />
