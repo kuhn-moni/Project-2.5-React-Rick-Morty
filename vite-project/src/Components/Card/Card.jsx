@@ -7,7 +7,7 @@ function Card({ character }) {
   return (
     <div className="my-card" key={id}>
       <h1>{name}</h1>
-      <h1>{species}</h1>
+      <h2>{species}</h2>
       <h2>{status}</h2>
       <img src={image} alt={name} />
 

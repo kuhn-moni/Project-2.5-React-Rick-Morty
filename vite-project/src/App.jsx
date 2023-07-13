@@ -31,9 +31,10 @@ function App() {
   return (
     <>
       <Search setSearch={setSearch} setCurrentPage={setCurrentPage} />
-
-      {data.length > 0 &&
-        data.map((character, i) => <Card key={i} character={character} />)}
+      <div className="card-container">
+        {data.length > 0 &&
+          data.map((character, i) => <Card key={i} character={character} />)}
+      </div>
 
       <Pagination setCurrentPage={setCurrentPage} currentPage={currentPage} />
     </>

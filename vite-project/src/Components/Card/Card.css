@@ -10,4 +10,5 @@
   transition: all 0.3s ease;
   width: 30vw;
   margin: 1em;
+  flex-wrap: wrap;
 }

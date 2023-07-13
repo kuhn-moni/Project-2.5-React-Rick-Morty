@@ -1,14 +1,13 @@
-import { useState } from "react";
+import React from "react";
 
 const Pagination = (props) => {
   console.log("props", props);
-  const { currentPage, setCurrentPage } = useState(1);
+  const { currentPage, setCurrentPage } = props;
 
   console.log("in pag", currentPage, setCurrentPage);
 
   const Next = () => {
     if (currentPage === 42) return;
-
     setCurrentPage(currentPage + 1);
   };
 
